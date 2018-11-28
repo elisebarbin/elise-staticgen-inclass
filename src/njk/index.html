@@ -1,25 +1,37 @@
 {% extends '_layouts/base.njk' %}
 
-{% block page_title %}The Ship's Log{% endblock %}
+{% block page_title %}Official Band Page{% endblock %}
 
 {% block content %}
 
 <div class="container">
 <div class="row">
-    <div class="col-sm-2 col-xs-0 col-lg-3"></div>
-    <div class="col-sm-8 col-xs-12 col-lg-6">
+    <div class="col-sm-4 col-xs-0 col-lg-3"></div>
     <p>
-      Ahoy Mateys! Welcome to the Ship's Log. Below you can read the diaries of <a href="detail-page.html">Capt Crit McGillicutty's</a> adventures.
+        Queen are a British rock band that formed in London in 1970. Their classic line-up was Freddie Mercury (lead vocals and piano), Brian May (lead guitar and vocals), Roger Taylor (drums and vocals), and John Deacon (bass guitar). Their earliest works were influenced by progressive rock, hard rock and heavy metal, but the band gradually ventured into more conventional and radio-friendly works by incorporating further styles, such as arena rock and pop rock, into their music.
     </p>
       <ul> 
-        {% for entry in entries %}
-        <h3 class="entry-headline"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-        <p class="entry-date">{{ entry.date }}</p>
-        <hr>
-{% endfor %}
-     </ul>
-    </div>
-    </div>
-      <div class="col-sm-2 col-xs-0 col-lg-3"></div>
-  </div>
-{% endblock %}
+        {% for members in members %}
+
+<div class="container">
+  <div class="row">
+    <div class="col md-4">
+    <div class="card">
+      <img class= "img-top" src=".../assets/img1/members/{{member.imagebw}}">
+      <div class="card-body">
+        <h5 class="card-title">{{member.name}}</h5>
+        <p class="card-text">{{member.instruments}}</p>
+
+        {% for album in albums%}
+
+<div class="container">
+  <div class="row">
+    <div class="col md-4">
+    <div class="card">
+      <img class= "img-top" src=".../assets/img1/discs/{{album.imagebw}}">
+      <div class="card-body">
+        <h5 class="card-title">{{album.name}}</h5>
+        <p class="card-text">{{album.instruments}}</p>
+
+
+

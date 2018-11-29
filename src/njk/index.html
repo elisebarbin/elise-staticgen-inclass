@@ -5,33 +5,41 @@
 {% block content %}
 
 <div class="container">
-<div class="row">
-    <div class="col-sm-4 col-xs-0 col-lg-3"></div>
     <p>
         Queen are a British rock band that formed in London in 1970. Their classic line-up was Freddie Mercury (lead vocals and piano), Brian May (lead guitar and vocals), Roger Taylor (drums and vocals), and John Deacon (bass guitar). Their earliest works were influenced by progressive rock, hard rock and heavy metal, but the band gradually ventured into more conventional and radio-friendly works by incorporating further styles, such as arena rock and pop rock, into their music.
     </p>
-      <ul> 
-        {% for members in members %}
+<div class="row">
 
-<div class="container">
-  <div class="row">
-    <div class="col md-4">
-    <div class="card">
-      <img class= "img-top" src=".../assets/img1/members/{{member.imagebw}}">
-      <div class="card-body">
-        <h5 class="card-title">{{member.name}}</h5>
-        <p class="card-text">{{member.instruments}}</p>
+        {% for member in members %}
+              <div class="col-md-3">
+              <div class="card" style="width: 16rem;",><a href="{{ member.name }}.html">
+                <img class= "img-top" src="assets/img/members/{{ member.imagebw }}">
+                <div class="card-body">
+                  <h5 class="card-title">{{member.name}}</h5>
+                  <p class="card-text">{{member.instruments}}</p>
+              </div>
+              </a>
+              </p>
+              </div>
 
-        {% for album in albums%}
+              </div>
+          {% endfor %}
+            </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col md-4">
-    <div class="card">
-      <img class= "img-top" src=".../assets/img1/discs/{{album.imagebw}}">
-      <div class="card-body">
-        <h5 class="card-title">{{album.name}}</h5>
-        <p class="card-text">{{album.instruments}}</p>
+          <ul class="list-unstyled">
+        {% for disc in discography%}
+            <li class="media">
+              <img class="mr-3" src="assets/img/discs/{{disc.image}}">
+              <div class="media-body">
+                <h5 class="mt-0 mb-1"> {{disc.title}}, {{disc.year}}</h5>
+              </div>
+            </li>
+          {% endfor %}
+          </ul>
 
+          </div>
+        </div>
+      </div>
 
+          {% endblock %}
 
